@@ -5,7 +5,7 @@ import {
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import profileImage from "../../assets/profile-image.png"; // Make sure to add your image
+import profileImage from "../../assets/profile-image.jpg"; // Make sure to add your image
 import resumePDF from "../../assets/SDE_praveen.pdf"; // Add your resume PDF
 import "./About.css";
 
@@ -36,10 +36,11 @@ const About = () => {
             <h3 className="section-title">About Me</h3>
 
             <p className="about-description">
-              I am a passionate software developer with expertise in .NET,
-              React, and modern web technologies. With a strong foundation in
-              full-stack development, I strive to create efficient and scalable
-              solutions that make a difference.
+              Skilled software and web developer with over 3.5 years of
+              experience. Proficient in developing dynamic web applications with
+              expertise in both front-end and back-end development. Dedicated to
+              keeping up with industry trends and providing secure, scalable
+              solutions..
             </p>
 
             <div className="personal-info">

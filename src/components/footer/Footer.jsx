@@ -9,6 +9,7 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -51,19 +52,25 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul className="footer-links">
             <li>
-              <a href="#home">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#about">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <a href="#projects">Projects</a>
+              <Link to="/education">Education</Link>
             </li>
             <li>
-              <a href="#skills">Skills</a>
+              <Link to="/projects">Projects</Link>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <Link to="/skills">Skills</Link>
+            </li>
+            <li>
+              <Link to="/experience">Experience</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
             </li>
           </ul>
         </div>

@@ -5,11 +5,13 @@ import Experience from "../experience/Experience";
 import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
 import Skills from "../skills/Skills";
+import Education from "../education/Education";
 
 function Home() {
   return (
     <>
       <About />
+      <Education />
       <Experience />
       <Projects />
       <Skills />
