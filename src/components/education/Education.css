@@ -3,6 +3,7 @@
     padding: 2rem 0;
     max-width: 900px;
     margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0);
   }
   
   .education-heading {
@@ -33,14 +34,14 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #e0e0e0;
+   background: rgba(224, 224, 224, 0.8); 
   }
   
   .education-card {
     display: flex;
     margin-bottom: 2.5rem;
     position: relative;
-    background: #fff;
+    background: rgba(224, 224, 224, 0.5); 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
@@ -64,6 +65,7 @@
     max-width: 80px;
     max-height: 80px;
     object-fit: contain;
+    mix-blend-mode:normal;
   }
   
   .education-details {
@@ -99,6 +101,7 @@
   
   .education-score {
     font-weight: 500;
+    color:#cfcfcf;;
   }
   
   @media (max-width: 768px) {

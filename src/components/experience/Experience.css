@@ -1,6 +1,6 @@
 .experience-section {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0);
   }
   
   .section-title {
@@ -12,11 +12,12 @@
   }
   
   .experience-card {
-    background: white;
+    background-color: rgba(248, 249, 250, 0);
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
+
   }
   
   .experience-header {
@@ -24,7 +25,7 @@
   }
   
   .experience-header h3 {
-    color: #2c3e50;
+    color: #ffffff;
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
@@ -42,11 +43,11 @@
   }
   
   .location {
-    color: #7f8c8d;
+    color: #fffcfc;
   }
   
   .duration {
-    color: #7f8c8d;
+    color: #ffffff;
     font-style: italic;
     margin-bottom: 15px;
   }
@@ -61,7 +62,7 @@
     padding-left: 25px;
     margin-bottom: 15px;
     line-height: 1.6;
-    color: #34495e;
+    color: #ffffff;
   }
   
   .achievements-list li::before {

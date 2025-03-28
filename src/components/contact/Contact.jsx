@@ -48,7 +48,9 @@ const Contact = () => {
       <div className="container">
         <div className="contact-content">
           <div className="contact-info">
-            <h2 className="section-title">Get in Touch</h2>
+            <h2 className="section-title" style={{ color: "white" }}>
+              Get in Touch
+            </h2>
             <p className="contact-description">
               Feel free to reach out to me for any questions or opportunities.
               I'll get back to you as soon as possible.

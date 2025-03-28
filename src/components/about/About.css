@@ -1,6 +1,6 @@
 .about-section {
   padding: 80px 0;
-  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 }
 
 .container {
@@ -14,6 +14,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 50px;
   align-items: start;
+  
 }
 
 /* Left Column Styles */
@@ -41,13 +42,13 @@
 
 .profile-name {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #ffffff;
   margin: 15px 0 5px;
   font-weight: 600;
 }
 
 .profile-title {
-  color: #666;
+  color: #ffffff;
   font-size: 1.1rem;
   margin-bottom: 20px;
 }
@@ -72,6 +73,7 @@
 
 .download-icon {
   margin-right: 10px;
+  color: #ffffff;
 }
 
 /* Right Column Styles */
@@ -81,20 +83,20 @@
 
 .section-title {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #fdfeff;;
   margin-bottom: 15px;
 }
 
 .title-underline {
   width: 80px;
   height: 4px;
-  background: #3498db;
+  background: #feffff;
   margin-bottom: 25px;
   border-radius: 2px;
 }
 
 .about-description {
-  color: #666;
+  color: #ffffff;
   line-height: 1.8;
   margin-bottom: 30px;
   font-size: 1.1rem;
@@ -111,9 +113,10 @@
   display: flex;
   align-items: center;
   padding: 15px;
-  background-color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 10px;
   transition: all 0.3s ease;
+  color: white;
 }
 
 .info-item:hover {
@@ -123,7 +126,7 @@
 
 .info-icon {
   font-size: 1.5rem;
-  color: #3498db;
+  color: #0ee97c;
   margin-right: 15px;
 }
 
@@ -134,45 +137,13 @@
 
 .info-label {
   font-size: 0.9rem;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 3px;
 }
 
 .info-text {
-  color: #2c3e50;
+  color: #ffffff;
   font-weight: 500;
-}
-
-.experience-section {
-  margin-top: 30px;
-}
-
-.experience-section h4 {
-  color: #2c3e50;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-}
-
-.experience-list {
-  list-style: none;
-  padding: 0;
-}
-
-.experience-list li {
-  position: relative;
-  padding-left: 25px;
-  margin-bottom: 12px;
-  color: #666;
-  line-height: 1.6;
-}
-
-.experience-list li::before {
-  content: "•";
-  color: #3498db;
-  font-size: 1.5rem;
-  position: absolute;
-  left: 0;
-  top: -5px;
 }
 
 /* Responsive Design */

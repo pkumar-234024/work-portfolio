@@ -1,6 +1,6 @@
 .contact-section {
     padding: 80px 0;
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0);
   }
   
   .container {
@@ -29,6 +29,7 @@
   .contact-description {
     line-height: 1.6;
     margin-bottom: 30px;
+    color: black;
   }
   
   .contact-details {
@@ -39,6 +40,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    color: rgb(192, 189, 189);
   }
   
   .contact-icon {
@@ -48,7 +50,8 @@
   }
   
   .contact-form {
-    background: white;
+    
+    background-color: rgba(248, 249, 250, 0);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -85,7 +88,7 @@
     border: none;
     background: none;
     font-size: 1rem;
-    color: #2c3e50;
+    color: #ffffff;
     outline: none;
   }
   

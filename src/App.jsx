@@ -8,23 +8,18 @@ import Blog from "./components/blog/Blog";
 import Testimonials from "./components/testimonials/Testimonials";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
+import Background3D from "./components/Background3D";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Experience from "./components/experience/Experience";
 import Footer from "./components/footer/Footer";
 import Education from "./components/education/Education";
-function App() {
-  // useEffect(() => {
-  //   AOS.init({
-  //     duration: 1000,
-  //     once: false,
-  //     mirror: true,
-  //   });
-  // }, []);
 
+function App() {
   return (
     <Router>
       <div className="app-container">
+        <Background3D />
         <Navbar />
         <main className="main-content">
           <Routes>

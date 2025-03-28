@@ -33,7 +33,9 @@ const About = () => {
 
           {/* Right Column */}
           <div className="about-right">
-            <h3 className="section-title">About Me</h3>
+            <h3 className="section-title" style={{ color: "white" }}>
+              About Me
+            </h3>
 
             <p className="about-description">
               Skilled software and web developer with over 3.5 years of

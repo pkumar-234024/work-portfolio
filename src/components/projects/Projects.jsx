@@ -104,7 +104,9 @@ function Projects() {
   return (
     <section className="projects-section">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title" style={{ color: "white" }}>
+          Projects
+        </h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div
@@ -198,7 +200,9 @@ function Projects() {
                   <h3>Key Achievements</h3>
                   <ul className="achievements-list">
                     {selectedProject.achievements.map((achievement, idx) => (
-                      <li key={idx}>{achievement}</li>
+                      <li key={idx} style={{ color: "black" }}>
+                        {achievement}
+                      </li>
                     ))}
                   </ul>
                 </div>

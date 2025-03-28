@@ -30,7 +30,9 @@ function Education() {
 
   return (
     <div className="education-container">
-      <h2 className="education-heading">Education</h2>
+      <h2 className="education-heading" style={{ color: "white" }}>
+        Education
+      </h2>
       <div className="education-timeline">
         {educationData.map((edu, index) => (
           <div className="education-card" key={index}>

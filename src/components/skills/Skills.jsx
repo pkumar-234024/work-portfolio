@@ -75,7 +75,9 @@ function Skills() {
   return (
     <section className="skills-section">
       <div className="container">
-        <h2 className="section-title">Technical Skills</h2>
+        <h2 className="section-title" style={{ color: "white" }}>
+          Technical Skills
+        </h2>
 
         <div className="skills-container">
           {skillCategories.map((category, index) => (

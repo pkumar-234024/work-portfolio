@@ -5,7 +5,9 @@ function Experience() {
   return (
     <section className="experience-section">
       <div className="container">
-        <h2 className="section-title">Professional Experience</h2>
+        <h2 className="section-title" style={{ color: "white" }}>
+          Professional Experience
+        </h2>
 
         <div className="experience-card">
           <div className="experience-header">
