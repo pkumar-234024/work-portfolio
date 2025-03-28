@@ -16,7 +16,7 @@ const Background3D = () => {
       0.1,
       1000
     );
-    camera.position.z = 20;
+    camera.position.z = 30;
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -24,68 +24,63 @@ const Background3D = () => {
     renderer.setClearColor(0x000000, 0);
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create geometric shapes
-    const shapes = [];
-    const totalShapes = 50;
-
-    // Materials with gradient colors
-    const materials = [
-      new THREE.MeshPhongMaterial({
-        color: 0x4f46e5,
-        shininess: 100,
-        transparent: true,
-        opacity: 0.7,
-      }),
-      new THREE.MeshPhongMaterial({
-        color: 0x06b6d4,
-        shininess: 100,
-        transparent: true,
-        opacity: 0.7,
-      }),
-      new THREE.MeshPhongMaterial({
-        color: 0x8b5cf6,
-        shininess: 100,
-        transparent: true,
-        opacity: 0.7,
-      }),
+    // Colors from the existing palette
+    const colors = [
+      new THREE.Color(0x4f46e5), // Indigo
+      new THREE.Color(0x06b6d4), // Cyan
+      new THREE.Color(0x8b5cf6), // Purple
     ];
 
-    // Create different geometric shapes
-    for (let i = 0; i < totalShapes; i++) {
-      let geometry;
-      const random = Math.random();
+    // Create particle wave system
+    const particleCount = 10000;
+    const particles = new THREE.BufferGeometry();
 
-      if (random < 0.33) {
-        // Icosahedron
-        geometry = new THREE.IcosahedronGeometry(Math.random() * 0.5 + 0.5);
-      } else if (random < 0.66) {
-        // Octahedron
-        geometry = new THREE.OctahedronGeometry(Math.random() * 0.5 + 0.5);
-      } else {
-        // Dodecahedron
-        geometry = new THREE.DodecahedronGeometry(Math.random() * 0.5 + 0.5);
-      }
+    // Create arrays for particle positions and colors
+    const positions = new Float32Array(particleCount * 3);
+    const particleColors = new Float32Array(particleCount * 3);
 
-      const material = materials[Math.floor(Math.random() * materials.length)];
-      const mesh = new THREE.Mesh(geometry, material);
+    // Grid dimensions
+    const gridSize = Math.sqrt(particleCount);
+    const spacing = 0.5;
 
-      // Random position
-      mesh.position.x = (Math.random() - 0.5) * 30;
-      mesh.position.y = (Math.random() - 0.5) * 30;
-      mesh.position.z = (Math.random() - 0.5) * 30;
+    // Create grid of particles
+    for (let i = 0; i < particleCount; i++) {
+      const x = ((i % gridSize) - gridSize / 2) * spacing;
+      const z = (Math.floor(i / gridSize) - gridSize / 2) * spacing;
+      const y = 0; // Initial y position (will be animated)
 
-      // Random rotation
-      mesh.rotation.x = Math.random() * Math.PI;
-      mesh.rotation.y = Math.random() * Math.PI;
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
 
-      // Store initial position for animation
-      mesh.userData.initialY = mesh.position.y;
-      mesh.userData.speed = Math.random() * 0.02 + 0.01;
-      mesh.userData.amplitude = Math.random() * 1 + 0.5;
+      // Assign colors based on position
+      const colorIndex = Math.floor(Math.random() * colors.length);
+      const color = colors[colorIndex];
 
-      shapes.push(mesh);
-      scene.add(mesh);
+      particleColors[i * 3] = color.r;
+      particleColors[i * 3 + 1] = color.g;
+      particleColors[i * 3 + 2] = color.b;
     }
+
+    particles.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    particles.setAttribute(
+      "color",
+      new THREE.BufferAttribute(particleColors, 3)
+    );
+
+    // Particle material
+    const particleMaterial = new THREE.PointsMaterial({
+      size: 0.15,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.8,
+      blending: THREE.AdditiveBlending,
+    });
+
+    // Create the particle system
+    const particleSystem = new THREE.Points(particles, particleMaterial);
+    particleSystem.rotation.x = -Math.PI / 4; // Tilt the wave
+    scene.add(particleSystem);
 
     // Add lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -109,8 +104,8 @@ const Background3D = () => {
       mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 
-      targetRotationX = mouseY * 0.5;
-      targetRotationY = mouseX * 0.5;
+      targetRotationX = mouseY * 0.2;
+      targetRotationY = mouseX * 0.2;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -119,22 +114,34 @@ const Background3D = () => {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // Smooth camera rotation
-      camera.rotation.x += (targetRotationX - camera.rotation.x) * 0.05;
-      camera.rotation.y += (targetRotationY - camera.rotation.y) * 0.05;
+      // Update particle positions to create wave effect
+      const positions = particles.attributes.position.array;
+      const time = Date.now() * 0.0005;
 
-      // Animate shapes
-      shapes.forEach((shape) => {
-        // Floating animation
-        shape.position.y =
-          shape.userData.initialY +
-          Math.sin(Date.now() * shape.userData.speed) *
-            shape.userData.amplitude;
+      for (let i = 0; i < particleCount; i++) {
+        const ix = i % gridSize;
+        const iz = Math.floor(i / gridSize);
 
-        // Rotation animation
-        shape.rotation.x += 0.005;
-        shape.rotation.y += 0.005;
-      });
+        // Create wave pattern
+        const xOffset = (ix / gridSize) * 10;
+        const zOffset = (iz / gridSize) * 10;
+
+        // Wave equation with multiple sine waves for more complex pattern
+        positions[i * 3 + 1] =
+          Math.sin(time + xOffset) * 2 +
+          Math.sin(time * 0.5 + zOffset) * 2 +
+          Math.sin(time * 0.2 + xOffset + zOffset) * 1;
+      }
+
+      particles.attributes.position.needsUpdate = true;
+
+      // Smooth camera rotation based on mouse position
+      camera.position.x += (mouseX * 10 - camera.position.x) * 0.05;
+      camera.position.y += (-mouseY * 10 - camera.position.y) * 0.05;
+      camera.lookAt(scene.position);
+
+      // Rotate the entire particle system slowly
+      particleSystem.rotation.z += 0.001;
 
       renderer.render(scene, camera);
     };
