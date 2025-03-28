@@ -22,9 +22,9 @@ function Skills() {
       title: "Programming Languages",
       icon: <FaCode />,
       skills: [
-        { name: "C# (Proficient)", icon: <DiDotnet /> },
-        { name: "Java (Proficient)", icon: <FaJava /> },
-        { name: "SQL", icon: <DiDatabase /> },
+        { name: "C#", icon: <DiDotnet /> },
+        { name: "Java", icon: <FaJava /> },
+        { name: "SQL Server", icon: <DiDatabase /> },
       ],
     },
     {

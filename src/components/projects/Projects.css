@@ -1,109 +1,294 @@
 .projects-section {
-    padding: 80px 0;
-    background-color: #f8f9fa;
-  }
-  
-  .section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    color: #2c3e50;
-    font-size: 2.5rem;
-    font-weight: 600;
-  }
-  
+  padding: 100px 0;
+  background-color: #f8fafc;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -0.5px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 32px;
+}
+
+/* Project Card Styles */
+.project-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.project-image-wrapper {
+  position: relative;
+  padding-top: 60%;
+  overflow: hidden;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.view-project {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: 2px solid white;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.project-content {
+  padding: 24px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.project-year {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.project-description {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-container {
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  z-index: 2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-hero {
+  position: relative;
+  height: 400px;
+}
+
+.modal-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+.modal-hero-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.modal-details {
+  padding: 4px;
+}
+
+.modal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.info-item h4 {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.info-item p {
+  font-size: 16px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.modal-section {
+  margin-bottom: 40px;
+}
+
+.modal-section h3 {
+  font-size: 24px;
+  color: #1e293b;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.technologies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.technology-item {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+}
+
+.achievements-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.achievements-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
   .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px;
+    grid-template-columns: 1fr;
   }
-  
-  .project-card {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+
+  .modal-info-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
+
+  .modal-hero {
+    height: 300px;
   }
-  
-  .project-title {
-    color: #2c3e50;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #3498db;
+
+  .modal-hero-content h2 {
+    font-size: 28px;
   }
-  
-  .technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
+
+  .modal-details {
+    padding: 24px;
   }
-  
-  .tech-tag {
-    background-color: #e1f0ff;
-    color: #3498db;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.85rem;
-    font-weight: 500;
-  }
-  
-  .achievements-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .achievements-list li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #34495e;
-  }
-  
-  .achievements-list li::before {
-    content: "→";
-    color: #3498db;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .projects-section {
-      padding: 40px 0;
-    }
-    
-    .section-title {
-      font-size: 2rem;
-    }
-    
-    .projects-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 10px;
-    }
-    
-    .project-card {
-      padding: 20px;
-    }
-  }
-  
-  /* Add smooth scrolling for the whole page */
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  /* Add container styles if not already defined */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+}

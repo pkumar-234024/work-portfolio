@@ -1,10 +1,11 @@
 .navbar {
+  font-weight: bold;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(173, 235, 214, 0.95);
   padding: 1rem 0;
   transition: all 0.3s ease;
 }
@@ -27,6 +28,7 @@
 .nav-brand {
   font-size: 1.5rem;
   font-weight: 700;
+  padding-left: 1rem;
 }
 
 .nav-brand a {
@@ -52,6 +54,7 @@
   padding: 0;
   gap: 1.5rem;
   align-items: center;
+  padding-right: 1.5rem;
 }
 
 .nav-item {

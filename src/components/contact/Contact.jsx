@@ -55,7 +55,12 @@ const Contact = () => {
             </p>
             <div className="contact-details">
               <div className="contact-item">
-                <FaEnvelope className="contact-icon" />
+                <a
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                  target="_blank"
+                >
+                  <FaEnvelope className="contact-icon" />
+                </a>
                 <span>praveen991210@gmail.com</span>
               </div>
               <div className="contact-item">

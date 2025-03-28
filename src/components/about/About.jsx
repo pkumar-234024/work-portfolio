@@ -45,7 +45,13 @@ const About = () => {
 
             <div className="personal-info">
               <div className="info-item">
-                <FaEnvelope className="info-icon" />
+                <a
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=new"
+                  target="_blank"
+                >
+                  <FaEnvelope className="info-icon" />
+                </a>
+
                 <div className="info-content">
                   <span className="info-label">Email</span>
                   <span className="info-text">praveen991210@gmail.com</span>
