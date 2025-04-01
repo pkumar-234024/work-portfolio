@@ -4,6 +4,9 @@ import sonoraimages from "../images/projectimages/SonoraContruction.png";
 import stimages from "../images/projectimages/Securitytraximg.jpg";
 import wpimages from "../images/projectimages/whatsremimg.jpg";
 import barimages from "../images/projectimages/barPatrolimg.jpg";
+import bdspimages from "../images/projectimages/bdsp.jpg";
+import pulldogimages from "../images/projectimages/clcimg.jpg";
+import portfolioimages from "../images/projectimages/portfolioimg.png";
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -13,7 +16,7 @@ function Projects() {
       title: "Sonora Construction",
       image: sonoraimages,
       shortDescription:
-        "A modern construction management platform with a multi-tenant architecture for streamlined operations.",
+        "A multi-tenant construction management platform streamlining operations and client communication.",
       technologies: [
         ".NET MVC Core",
         "C#",
@@ -24,13 +27,13 @@ function Projects() {
         "SQL Server",
       ],
       achievements: [
-        "Consolidated multiple websites into a unified, multi-functional platform, enhancing user experience with a streamlined interface.",
-        "Integrated SyncFusion for UI development, reducing development time and costs by 35%.",
-        "Implemented multi-tenancy to enable seamless client domain switching from a single codebase.",
-        "Boosted user satisfaction by 40% through smooth, AJAX-driven rendering.",
+        "Unified multiple websites into a single multi-functional platform, improving user experience.",
+        "Integrated SyncFusion for UI components, reducing development time by 35%.",
+        "Implemented multi-tenancy for seamless client domain switching.",
+        "Enhanced user satisfaction by 40% with AJAX-driven rendering.",
       ],
       description:
-        "A robust construction management system that optimizes operations and enhances client communication with multi-tenant capabilities.",
+        "Sonora Construction is a robust platform designed to optimize construction operations and improve client communication. It features multi-tenant capabilities, advanced UI components, and seamless domain switching for enhanced efficiency.",
       year: "2023 - Present",
       client: "Sonora Industries",
       role: "Full Stack Developer",
@@ -40,14 +43,14 @@ function Projects() {
       title: "Subscription WhatsApp Notifier",
       image: wpimages,
       shortDescription:
-        "An automated notification system for subscription billing and WhatsApp alerts.",
+        "An automated system for subscription billing and WhatsApp notifications.",
       technologies: ["ASP.NET", "Web Forms", "C#", "ADO.NET", "SQL Server"],
       achievements: [
-        "Developed a Windows service to automate the daily billing cycle for subscriptions, reducing manual work by 80%.",
-        "Integrated the Gupshup API to send automated WhatsApp notifications through the Windows service.",
+        "Automated daily billing cycles, reducing manual work by 80%.",
+        "Integrated Gupshup API for automated WhatsApp notifications.",
       ],
       description:
-        "A subscription management system that automates billing and enhances customer engagement using WhatsApp notifications.",
+        "This system automates subscription billing and enhances customer engagement through WhatsApp notifications. It streamlines operations and reduces manual intervention, ensuring timely communication with customers.",
       year: "2021 - 2022",
       client: "Subscription Services Ltd.",
       role: "Full Stack Developer",
@@ -57,7 +60,7 @@ function Projects() {
       title: "Security Trax",
       image: stimages,
       shortDescription:
-        "A security service management platform with advanced scheduling and reporting capabilities.",
+        "A security service management platform with advanced scheduling and reporting.",
       technologies: [
         "React",
         ".NET Core",
@@ -67,21 +70,21 @@ function Projects() {
         "Entity Framework",
       ],
       achievements: [
-        "Developed a dynamic dashboard using React.js to manage appointments and generate detailed security reports.",
-        "Designed and optimized a scalable RESTful API with .NET Core and Entity Framework, improving data retrieval speed by 30%.",
+        "Developed a dynamic React.js dashboard for managing appointments and generating reports.",
+        "Optimized RESTful APIs with .NET Core, improving data retrieval speed by 30%.",
       ],
       description:
-        "An all-in-one security service management system that streamlines scheduling, reporting, and enhances data communication via RESTful APIs.",
+        "Security Trax is an all-in-one platform for managing security services. It features advanced scheduling, reporting, and data communication through scalable RESTful APIs.",
       year: "2022 - 2023",
       client: "Security Trax Inc.",
       role: "Full Stack Developer",
       duration: "12 months",
     },
     {
-      title: "BarpatrolAPP",
+      title: "Bar Patrol App",
       image: barimages,
       shortDescription:
-        "A bar inventory management application with secure API and drag-and-drop UI.",
+        "A bar inventory management system with secure APIs and an intuitive UI.",
       technologies: [
         "ASP.NET Core Web API",
         "C#",
@@ -92,20 +95,88 @@ function Projects() {
         "JWT Authentication",
         "Dependency Injection",
         "SOLID Principles",
+        "Flutter",
       ],
       achievements: [
-        "Developed secure APIs using ASP.NET Core with JWT token-based authentication and authorization.",
-        "Implemented CQRS and MediatR to improve system performance and maintainability.",
-        "Designed a mobile app in Flutter to enhance user experience.",
+        "Developed secure APIs with JWT-based authentication and authorization.",
+        "Implemented CQRS and MediatR for improved performance and maintainability.",
+        "Designed a Flutter-based mobile app for enhanced user experience.",
+        "Leveraged AI tools to optimize inventory predictions and streamline order management.",
       ],
       description:
-        "A bar inventory management system that automates order management and enhances inventory control through secure APIs and an intuitive UI.",
+        "Bar Patrol App automates bar inventory management with secure APIs and a drag-and-drop UI. It simplifies order management and enhances inventory control for bar owners. AI tools were used to predict inventory needs and improve operational efficiency.",
       year: "2024 - Present",
-      client: "Barpatrol Inc.",
+      client: "Bar Patrol Inc.",
       role: "Full Stack Developer",
       duration: "12 months",
     },
-    // ... other projects
+    {
+      title: "React Portfolio Website",
+      image: portfolioimages, // Replace with the actual image path
+      shortDescription:
+        "A personal portfolio website showcasing projects, skills, and achievements, built with React and AI tools.",
+      technologies: ["React", "CSS", "Bootstrap", "HTML", "AI Tools"],
+      achievements: [
+        "Designed and developed a responsive portfolio website using React.",
+        "Utilized AI tools to generate content and optimize the design process.",
+        "Implemented dynamic project filtering and modal popups for detailed project views.",
+      ],
+      description:
+        "This portfolio website is a personal project to showcase my skills, projects, and achievements. It features a responsive design, dynamic project filtering, and interactive modals for detailed project views. AI tools were used to streamline content creation and improve the overall design.",
+      year: "2025",
+      client: "Personal Project",
+      role: "Frontend Developer",
+      duration: "1 month",
+    },
+    {
+      title: "PullDog",
+      image: pulldogimages, // Replace with the actual image path
+      shortDescription:
+        "An ASP.NET console application that scrapes data from Redfin and uploads it to Salesforce.",
+      technologies: [
+        "C#",
+        "ASP.NET",
+        "SQL Server",
+        "Salesforce",
+        "Windows Scheduler",
+      ],
+      achievements: [
+        "Developed a Windows Scheduler-based ASP.NET console application.",
+        "Integrated Salesforce API for seamless data uploads.",
+        "Configured the scheduler to run multiple times a day for real-time updates.",
+      ],
+      description:
+        "PullDog is an ASP.NET console application that functions as a Windows Scheduler to scrape data from the Redfin website and upload it to Salesforce. The scheduler ensures data is updated multiple times a day, improving data accuracy and availability.",
+      year: "2023",
+      client: "Real Estate Solutions Inc.",
+      role: "Backend Developer",
+      duration: "6 months",
+    },
+    {
+      title: "Bulldog Solar",
+      image: bdspimages, // Replace with the actual image path
+      shortDescription:
+        "A Windows Scheduler-based ASP.NET console application for data integration with HubSpot.",
+      technologies: [
+        "C#",
+        "ASP.NET Console Application",
+        "SQL Server",
+        "Twilio",
+        "HubSpot",
+        "Windows Scheduler",
+      ],
+      achievements: [
+        "Developed a scheduler-based application to fetch and upload data to HubSpot.",
+        "Integrated Twilio email services for lead notifications.",
+        "Automated lead assignment to team members in HubSpot.",
+      ],
+      description:
+        "Bulldog Solar is an ASP.NET console application that fetches data from an external API and uploads it to HubSpot at scheduled intervals. The application automates lead assignment and sends notifications via Twilio email services, streamlining the lead management process.",
+      year: "2023",
+      client: "Solar Energy Solutions Ltd.",
+      role: "Backend Developer",
+      duration: "5 months",
+    },
   ];
 
   return (
@@ -182,10 +253,6 @@ function Projects() {
                     <h4>Role</h4>
                     <p>&nbsp;&nbsp;{selectedProject.role}</p>
                   </div>
-                  {/* <div className="info-item">
-                    <h4>Duration</h4>
-                    <p>&nbsp;&nbsp;{selectedProject.duration}</p>
-                  </div> */}
                   <div className="info-item">
                     <h4>Year</h4>
                     <p>&nbsp;&nbsp;{selectedProject.year}</p>
