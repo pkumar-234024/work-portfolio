@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./Projects.css";
-import images from "../images/projectimages/sonora1.png";
+import sonoraimages from "../images/projectimages/SonoraContruction.png";
+import stimages from "../images/projectimages/Securitytraximg.jpg";
+import wpimages from "../images/projectimages/whatsremimg.jpg";
+import barimages from "../images/projectimages/barPatrolimg.jpg";
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -8,9 +11,9 @@ function Projects() {
   const projects = [
     {
       title: "Sonora Construction",
-      image: images,
+      image: sonoraimages,
       shortDescription:
-        "A modern construction management platform with multi-tenant architecture.",
+        "A modern construction management platform with a multi-tenant architecture for streamlined operations.",
       technologies: [
         ".NET MVC Core",
         "C#",
@@ -21,23 +24,40 @@ function Projects() {
         "SQL Server",
       ],
       achievements: [
-        "Consolidated multiple websites into a single, multi-functional platform, improving user experience through a unified and streamlined interface.",
-        "Integrated SyncFusion for UI development, reducing development costs by 35% through predefined features.",
-        "Implemented a multi-tenancy feature, enabling client domain switching from a single codebase.",
-        "Enhanced user satisfaction by 40% through seamless rendering with AJAX.",
+        "Consolidated multiple websites into a unified, multi-functional platform, enhancing user experience with a streamlined interface.",
+        "Integrated SyncFusion for UI development, reducing development time and costs by 35%.",
+        "Implemented multi-tenancy to enable seamless client domain switching from a single codebase.",
+        "Boosted user satisfaction by 40% through smooth, AJAX-driven rendering.",
       ],
       description:
-        "A comprehensive construction management platform that streamlines operations and improves client communication.",
+        "A robust construction management system that optimizes operations and enhances client communication with multi-tenant capabilities.",
       year: "2023 - Present",
       client: "Sonora Industries",
       role: "Full Stack Developer",
       duration: "8 months",
     },
     {
-      title: "Security Trax",
-      image: images,
+      title: "Subscription WhatsApp Notifier",
+      image: wpimages,
       shortDescription:
-        "A security service management platform with scheduling and reporting features.",
+        "An automated notification system for subscription billing and WhatsApp alerts.",
+      technologies: ["ASP.NET", "Web Forms", "C#", "ADO.NET", "SQL Server"],
+      achievements: [
+        "Developed a Windows service to automate the daily billing cycle for subscriptions, reducing manual work by 80%.",
+        "Integrated the Gupshup API to send automated WhatsApp notifications through the Windows service.",
+      ],
+      description:
+        "A subscription management system that automates billing and enhances customer engagement using WhatsApp notifications.",
+      year: "2021 - 2022",
+      client: "Subscription Services Ltd.",
+      role: "Full Stack Developer",
+      duration: "10 months",
+    },
+    {
+      title: "Security Trax",
+      image: stimages,
+      shortDescription:
+        "A security service management platform with advanced scheduling and reporting capabilities.",
       technologies: [
         "React",
         ".NET Core",
@@ -47,56 +67,43 @@ function Projects() {
         "Entity Framework",
       ],
       achievements: [
-        "Developed a dashboard using React.js to create and schedule appointments and generate reports for security services.",
-        "Designed and deployed a scalable RESTful API using .NET Core with Entity Framework, achieving a 30% improvement in data retrieval speed.",
+        "Developed a dynamic dashboard using React.js to manage appointments and generate detailed security reports.",
+        "Designed and optimized a scalable RESTful API with .NET Core and Entity Framework, improving data retrieval speed by 30%.",
       ],
       description:
-        "A comprehensive security service management system that streamlines scheduling, reporting, and API communication.",
+        "An all-in-one security service management system that streamlines scheduling, reporting, and enhances data communication via RESTful APIs.",
       year: "2022 - 2023",
       client: "Security Trax Inc.",
       role: "Full Stack Developer",
       duration: "12 months",
     },
     {
-      title: "Subscription WhatsApp Notifier",
-      image: images,
+      title: "BarpatrolAPP",
+      image: barimages,
       shortDescription:
-        "An automated notification system for subscription billing and WhatsApp alerts.",
-      technologies: ["ASP.NET", "Web Forms", "C#", "ADO.NET", "SQL Server"],
-      achievements: [
-        "Developed a Windows service to automate the billing cycle per day for subscriptions, reducing 80% of manual work.",
-        "Integrated the Gupshup API to send WhatsApp notifications using the Windows service.",
-      ],
-      description:
-        "A subscription management system that automates billing and enhances customer engagement through WhatsApp notifications.",
-      year: "2021 - 2022",
-      client: "Subscription Services Ltd.",
-      role: "Full Stack Developer",
-      duration: "10 months",
-    },
-    {
-      title: "Bulldog Solar",
-      image: images,
-      shortDescription:
-        "An automated solar energy management system with API synchronization.",
+        "A bar inventory management application with secure API and drag-and-drop UI.",
       technologies: [
-        "ASP.NET Core",
-        "MVC",
+        "ASP.NET Core Web API",
         "C#",
         "SQL Server",
-        "Entity Framework",
-        "Twilio",
+        "Flutter",
+        "CQRS",
+        "MediatR",
+        "JWT Authentication",
+        "Dependency Injection",
+        "SOLID Principles",
       ],
       achievements: [
-        "Developed a Windows service to sync API data to HubSpot at scheduled intervals, eliminating 100% of manual work.",
-        "Designed and deployed a scalable RESTful API using .NET Core with Entity Framework to facilitate communication with the Twilio messaging API for sending and receiving text messages.",
+        "Developed secure APIs using ASP.NET Core with JWT token-based authentication and authorization.",
+        "Implemented CQRS and MediatR to improve system performance and maintainability.",
+        "Designed a mobile app in Flutter to enhance user experience.",
       ],
       description:
-        "A solar management system that automates API synchronization and enhances communication through Twilio messaging.",
-      year: "2020 - 2021",
-      client: "Bulldog Solar Inc.",
+        "A bar inventory management system that automates order management and enhances inventory control through secure APIs and an intuitive UI.",
+      year: "2024 - Present",
+      client: "Barpatrol Inc.",
       role: "Full Stack Developer",
-      duration: "14 months",
+      duration: "12 months",
     },
     // ... other projects
   ];
@@ -175,10 +182,10 @@ function Projects() {
                     <h4>Role</h4>
                     <p>&nbsp;&nbsp;{selectedProject.role}</p>
                   </div>
-                  <div className="info-item">
+                  {/* <div className="info-item">
                     <h4>Duration</h4>
                     <p>&nbsp;&nbsp;{selectedProject.duration}</p>
-                  </div>
+                  </div> */}
                   <div className="info-item">
                     <h4>Year</h4>
                     <p>&nbsp;&nbsp;{selectedProject.year}</p>
@@ -187,6 +194,7 @@ function Projects() {
 
                 <div className="modal-section">
                   <h3>Technologies Used</h3>
+                  <hr style={{ border: "2px solid rgb(255, 255, 255)" }} />
                   <div className="technologies-grid">
                     {selectedProject.technologies.map((tech, idx) => (
                       <span key={idx} className="technology-item">
@@ -198,6 +206,7 @@ function Projects() {
 
                 <div className="modal-section">
                   <h3>Key Achievements</h3>
+                  <hr style={{ border: "2px solid rgb(255, 255, 255)" }} />
                   <ul className="achievements-list">
                     {selectedProject.achievements.map((achievement, idx) => (
                       <li key={idx} style={{ color: "black" }}>

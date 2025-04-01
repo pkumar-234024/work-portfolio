@@ -122,7 +122,7 @@
 }
 
 .tech-badge {
-  background-color: rgba(117, 143, 168, 0.3);
+  background-color: rgba(248, 249, 250, 0);
   color: #ffffff;
   padding: 6px 12px;
   border-radius: 20px;
@@ -144,7 +144,8 @@
 }
 
 .modal-container {
-  background: white;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.415);
   border-radius: 20px;
   width: 100%;
   max-width: 1000px;
@@ -160,7 +161,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: white;
+  background-color: rgba(0, 0, 0, 0.396);
   border: none;
   cursor: pointer;
   display: flex;
@@ -208,13 +209,13 @@
   gap: 15px;
   margin-bottom: 40px;
   padding: 15px;
-  background: #f8fafc;
+  background-color: rgba(145, 146, 147, 0.207);
   border-radius: 12px;
 }
 
 .info-item h4 {
   font-size: 14px;
-  color: #64748b;
+  color: #c1d1e7;
   margin-bottom: 18px;
 }
 
