@@ -1,160 +1,276 @@
 .contact-section {
-    padding: 80px 0;
-    background-color: rgba(248, 249, 250, 0);
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
+  padding: 80px 0;
+  background-color: rgba(248, 249, 250, 0);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.contact-info {
+  padding-right: 30px;
+}
+.section-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.contact-description {
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.contact-details {
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: rgb(192, 189, 189);
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: #3498db;
+  margin-right: 15px;
+}
+
+.contact-form {
+  background-color: rgba(248, 249, 250, 0);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.input-container.focused {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.input-icon {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: #ffffff;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px 25px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.button-icon {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
   .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 50px;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
-  
+
   .contact-info {
-    padding-right: 30px;
+    padding-right: 0;
   }
+
   .section-title {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 2rem;
   }
-  
-  .contact-description {
-    line-height: 1.6;
-    margin-bottom: 30px;
-    color: black;
-  }
-  
-  .contact-details {
-    margin-top: 30px;
-  }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    color: rgb(192, 189, 189);
-  }
-  
-  .contact-icon {
-    font-size: 1.2rem;
-    color: #3498db;
-    margin-right: 15px;
-  }
-  
+
   .contact-form {
-    
-    background-color: rgba(248, 249, 250, 0);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
   }
-  
-  .form-group {
-    margin-bottom: 25px;
+}
+
+/* Animation for focus states */
+@keyframes focusAnimation {
+  0% {
+    transform: scale(1);
   }
-  
-  .input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    border: 2px solid #e1e1e1;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+  50% {
+    transform: scale(1.02);
   }
-  
-  .input-container.focused {
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  100% {
+    transform: scale(1);
   }
-  
-  .input-icon {
-    color: #666;
-    font-size: 1.1rem;
-    margin: 0 15px;
+}
+
+.input-container.focused {
+  animation: focusAnimation 0.3s ease;
+}
+/* Add these styles to your Contact.css file */
+
+/* Spinner animation */
+/* Add these styles to your Contact.css file */
+
+/* Spinner animation */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    background: none;
-    font-size: 1rem;
-    color: #ffffff;
-    outline: none;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  textarea {
-    resize: vertical;
-    min-height: 120px;
+}
+
+/* Form styles during loading */
+input:disabled,
+textarea:disabled,
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Consistent button width */
+.submit-button {
+  min-width: 150px;
+}
+
+/* Modern Notification Alert */
+.notification-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  max-width: 350px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification-alert.success {
+  background-color: #d4edda;
+  border-left: 5px solid #28a745;
+  color: #155724;
+}
+
+.notification-alert.error {
+  background-color: #f8d7da;
+  border-left: 5px solid #dc3545;
+  color: #721c24;
+}
+
+.notification-icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.notification-alert span {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.close-notification {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.7;
+}
+
+.close-notification:hover {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  input::placeholder,
-  textarea::placeholder {
-    color: #999;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .submit-button {
-    width: 100%;
-    padding: 15px 25px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .submit-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
+  to {
+    transform: translateX(100%);
+    opacity: 0;
   }
-  
-  .button-icon {
-    margin-right: 10px;
-    font-size: 1.1rem;
-  }
-  
-  @media (max-width: 768px) {
-    .contact-content {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-  
-    .contact-info {
-      padding-right: 0;
-    }
-  
-    .section-title {
-      font-size: 2rem;
-    }
-  
-    .contact-form {
-      padding: 30px;
-    }
-  }
-  
-  /* Animation for focus states */
-  @keyframes focusAnimation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-  }
-  
-  .input-container.focused {
-    animation: focusAnimation 0.3s ease;
-  }
-  
+}
+
+/* Hide notifications with animation */
+.notification-alert.hide {
+  animation: slideOut 0.3s ease-in forwards;
+}

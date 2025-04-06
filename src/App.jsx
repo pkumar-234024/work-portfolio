@@ -14,11 +14,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Experience from "./components/experience/Experience";
 import Footer from "./components/footer/Footer";
 import Education from "./components/education/Education";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="app-container">
+        <ScrollToTop />
         <Background3D />
         <Navbar />
         <main className="main-content">

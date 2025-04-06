@@ -1,5 +1,13 @@
-import React, { useState } from "react";
-import { FaUser, FaEnvelope, FaComment, FaPaperPlane } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import {
+  FaUser,
+  FaEnvelope,
+  FaComment,
+  FaPaperPlane,
+  FaSpinner,
+  FaCheckCircle,
+  FaExclamationTriangle,
+} from "react-icons/fa";
 import "./Contact.css";
 
 const Contact = () => {
@@ -14,6 +22,29 @@ const Contact = () => {
     email: false,
     message: false,
   });
+
+  const [notification, setNotification] = useState({
+    visible: false,
+    success: false,
+    message: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Auto-hide notification after 5 seconds
+  useEffect(() => {
+    let timer;
+    if (notification.visible) {
+      timer = setTimeout(() => {
+        setNotification({
+          visible: false,
+          success: false,
+          message: "",
+        });
+      }, 5000);
+    }
+    return () => clearTimeout(timer);
+  }, [notification.visible]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,14 +68,92 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
+
+    // Create request body matching the new API structure
+    const emailData = {
+      toEmail: "praveen991210@gmail.com", // You can change this to formData.email if needed
+      name: formData.name,
+      body: formData.message,
+    };
+
+    try {
+      // Using the new API endpoint from your curl example
+      const response = await fetch(
+        "https://rajshreepress.runasp.net/EmailSender",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(emailData),
+        }
+      );
+
+      if (response.ok) {
+        // Show success notification
+        setNotification({
+          visible: true,
+          success: true,
+          message: "Message sent successfully! Thank you for reaching out.",
+        });
+
+        // Reset form on success
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        // Show error notification
+        setNotification({
+          visible: true,
+          success: false,
+          message: "Failed to send message. Please try again later.",
+        });
+      }
+    } catch (error) {
+      // Show error notification
+      setNotification({
+        visible: true,
+        success: false,
+        message: "An error occurred. Please try again later.",
+      });
+      console.error("Error sending message:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <section className="contact-section">
+      {/* Modern notification alert */}
+      {notification.visible && (
+        <div
+          className={`notification-alert ${
+            notification.success ? "success" : "error"
+          }`}
+        >
+          {notification.success ? (
+            <FaCheckCircle className="notification-icon" />
+          ) : (
+            <FaExclamationTriangle className="notification-icon" />
+          )}
+          <span>{notification.message}</span>
+          <button
+            className="close-notification"
+            onClick={() =>
+              setNotification({ visible: false, success: false, message: "" })
+            }
+          >
+            ×
+          </button>
+        </div>
+      )}
+
       <div className="container">
         <div className="contact-content">
           <div className="contact-info">
@@ -60,6 +169,7 @@ const Contact = () => {
                 <a
                   href="https://mail.google.com/mail/u/0/#inbox?compose=new"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <FaEnvelope className="contact-icon" />
                 </a>
@@ -88,6 +198,7 @@ const Contact = () => {
                   onBlur={() => handleBlur("name")}
                   required
                   placeholder="Your Name"
+                  disabled={isLoading}
                 />
               </div>
             </div>
@@ -107,6 +218,7 @@ const Contact = () => {
                   onBlur={() => handleBlur("email")}
                   required
                   placeholder="Your Email"
+                  disabled={isLoading}
                 />
               </div>
             </div>
@@ -128,13 +240,27 @@ const Contact = () => {
                   required
                   placeholder="Your Message"
                   rows="5"
+                  disabled={isLoading}
                 ></textarea>
               </div>
             </div>
 
-            <button type="submit" className="submit-button">
-              <FaPaperPlane className="button-icon" />
-              Send Message
+            <button
+              type="submit"
+              className="submit-button"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <FaSpinner className="button-icon spinner" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <FaPaperPlane className="button-icon" />
+                  Send Message
+                </>
+              )}
             </button>
           </form>
         </div>
