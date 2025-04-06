@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Globe, Github } from "lucide-react";
 import "./Projects.css";
 import sonoraimages from "../images/projectimages/SonoraContruction.png";
 import stimages from "../images/projectimages/Securitytraximg.jpg";
@@ -38,6 +39,8 @@ function Projects() {
       client: "Sonora Industries",
       role: "Full Stack Developer",
       duration: "8 months",
+      website: "http://sonoratest.sonoraconstruction.net/",
+      githubUrl: "",
     },
     {
       title: "Subscription WhatsApp Notifier",
@@ -55,6 +58,8 @@ function Projects() {
       client: "Subscription Services Ltd.",
       role: "Full Stack Developer",
       duration: "10 months",
+      website: "",
+      githubUrl: "",
     },
     {
       title: "Security Trax",
@@ -79,6 +84,8 @@ function Projects() {
       client: "Security Trax Inc.",
       role: "Full Stack Developer",
       duration: "12 months",
+      website: "https://st.bulldogsecurityservice.com/login",
+      githubUrl: "",
     },
     {
       title: "Bar Patrol App",
@@ -109,6 +116,8 @@ function Projects() {
       client: "Bar Patrol Inc.",
       role: "Full Stack Developer",
       duration: "12 months",
+      website: "https://barpatrolonline.net/account/login",
+      githubUrl: "",
     },
     {
       title: "React Portfolio Website",
@@ -127,6 +136,8 @@ function Projects() {
       client: "Personal Project",
       role: "Frontend Developer",
       duration: "1 month",
+      website: "https://work-portfolio.pages.dev/",
+      githubUrl: "https://github.com/pkumar-234024/work-portfolio",
     },
     {
       title: "PullDog",
@@ -151,6 +162,8 @@ function Projects() {
       client: "Real Estate Solutions Inc.",
       role: "Backend Developer",
       duration: "6 months",
+      website: "",
+      githubUrl: "",
     },
     {
       title: "Bulldog Solar",
@@ -176,6 +189,8 @@ function Projects() {
       client: "Solar Energy Solutions Ltd.",
       role: "Backend Developer",
       duration: "5 months",
+      website: "",
+      githubUrl: "",
     },
   ];
 
@@ -257,6 +272,30 @@ function Projects() {
                     <h4>Year</h4>
                     <p>&nbsp;&nbsp;{selectedProject.year}</p>
                   </div>
+                </div>
+                <div className="web-repo-buttons">
+                  {selectedProject.website && (
+                    <a
+                      href={selectedProject.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="web-repo-button left"
+                    >
+                      <Globe size={18} className="icon" />
+                      Visit Website
+                    </a>
+                  )}
+                  {selectedProject.githubUrl && (
+                    <a
+                      href={selectedProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="web-repo-button right"
+                    >
+                      <Github size={18} className="icon" />
+                      Visit Repo
+                    </a>
+                  )}
                 </div>
 
                 <div className="modal-section">
