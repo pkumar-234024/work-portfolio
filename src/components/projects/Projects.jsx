@@ -58,7 +58,7 @@ function Projects() {
       client: "Subscription Services Ltd.",
       role: "Full Stack Developer",
       duration: "10 months",
-      website: "",
+      website: "http://164.52.216.107:8081/",
       githubUrl: "",
     },
     {
